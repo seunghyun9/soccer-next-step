@@ -9,3 +9,4 @@ export function Counter({ onIncrease, onDecrease, number }){
     </div>
   );
 };
+
