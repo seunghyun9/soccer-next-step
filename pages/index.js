@@ -6,12 +6,6 @@ import styles from '@/styles/Home.module.css'
 export default function Home() {
   return (
     <Layout>
-      <Head/>
-      <Nav/>
-      <Table/>
-      <Pagination/>
-      <Footer/>
-      <Modal/>
     </Layout>
   )
 }
