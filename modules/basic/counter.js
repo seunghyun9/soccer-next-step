@@ -4,8 +4,9 @@ import {delay, put, takeLatest, select, throttle} from 'redux-saga/effects';
 const INCREASE = 'counter/INCREASE';
 const DECREASE = 'counter/DECREASE';
 
-export const increase = createAction(INCREASE);
-export const decrease = createAction(DECREASE);
+export const increase = createAction(INCREASE, e=>{
+});
+export const decrease = createAction(DECREASE, e=>e);
 export function* counterSaga() {
     yield takeLatest(INCREASE, increaseService);
     yield takeLatest(DECREASE, decreaseService);

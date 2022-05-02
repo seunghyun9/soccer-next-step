@@ -23,6 +23,6 @@ const RegisterPage = () => {
     <Register onChange={onChange} onSubmit={onSubmit}  />
   );
 };
-const mapStateToProps = state => ({isRegistered: state.register.isRegistered})
+const mapStateToProps = state => ({isRegistered: state.signup.isRegistered})
 const registerActions = {registerRequest, unregisterRequest}
 export default connect(mapStateToProps, registerActions)(RegisterPage)

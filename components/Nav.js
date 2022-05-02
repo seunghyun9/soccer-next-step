@@ -21,7 +21,7 @@ const HomeIcon = createSvgIcon(
   'Home',
 );
 
-const pages = ['카운터', '계산기', 'BMI', '게시판'];
+const pages = ['Home','카운터', '계산기', 'BMI', '게시판'];
 const preSettings = ['회원가입', '로그인'];
 const postSettings = ['프로필', '정보수정', '로그아웃', '회원탈퇴'];
 
