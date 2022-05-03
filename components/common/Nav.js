@@ -57,7 +57,6 @@ export function Nav() {
         setAnchorElUser(null);
     };
     const handleLogout = () => {
-        alert(' 로그아웃 클릭 ')
         dispatch(logoutRequest());
     }
 
@@ -95,10 +94,9 @@ export function Nav() {
                 marginBottom: "20px"
             }}>
             <Container maxWidth="xl">
-                <Toolbar disableGutters="disableGutters">
+                <Toolbar >
                     <Typography
                         variant="h6"
-                        noWrap="noWrap"
                         component="div"
                         sx={{
                             mr: 2,
@@ -179,7 +177,6 @@ export function Nav() {
                                 vertical: 'top',
                                 horizontal: 'right'
                             }}
-                            keepMounted="keepMounted"
                             transformOrigin={{
                                 vertical: 'top',
                                 horizontal: 'right'

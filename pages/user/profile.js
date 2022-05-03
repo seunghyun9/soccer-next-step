@@ -1,19 +1,15 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { profile } from '@/modules/user/profile';
-import { Profile } from '@/components/user/Profile';
+import React, { useEffect } from 'react';
+import {Profile} from '@/components'
+import { useSelector } from 'react-redux';
 
 const ProfilePage = () => {
-  return (
-    <Profile/>
-  );
+    const {loginUser} = useSelector(state => state.login)
+
+    useEffect(() =>{
+        console.log(' 모듈에 저장된 로그인값: '+JSON.stringify(loginUser))
+    }, [loginUser && loginUser.name])
+
+    return (<Profile loginUser={loginUser}/>);
 };
 
-export default connect(
-  state => ({
-    profileUser: state.profileUser
-  }),
-  {
-    profile
-  }
-)(ProfilePage);
+export default ProfilePage

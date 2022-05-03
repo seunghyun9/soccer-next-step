@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
-import { useDispatch } from 'react-redux';
-import { connect } from 'react-redux';
+import { useDispatch, connect } from 'react-redux';
 import { registerRequest, unregisterRequest } from '@/modules/auth/register';
-import { Register } from '@/components/auth/Register';
+import { Register } from '@/components';
 
 const RegisterPage = () => {
     const [user, setUser] =useState({
@@ -23,6 +22,17 @@ const RegisterPage = () => {
     <Register onChange={onChange} onSubmit={onSubmit}  />
   );
 };
-const mapStateToProps = state => ({isRegistered: state.signup.isRegistered})
+
+const mapStateToProps = state => ({ isRegisterd: state.register.isRegisterd })
 const registerActions = {registerRequest, unregisterRequest}
+
 export default connect(mapStateToProps, registerActions)(RegisterPage)
+/*
+export default connect(
+  state => ({
+    user: state.user
+  }),
+  { 
+    userRegister
+  }
+)(RegisterPage);*/

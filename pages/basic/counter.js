@@ -1,33 +1,22 @@
 import React from 'react';
-import {connect, useSelector, useDispatch} from 'react-redux';
-import {increase, decrease} from '@/modules/basic/counter';
-import {Counter} from '@/components/basic/Counter';
+import {connect} from 'react-redux';
+import {increaseAsync, decreaseAsync} from '@/modules/basic/counter';
+import {Counter} from '@/components';
 
-const CounterPage = () => {
-    const number = useSelector(state => state.counter.number)
-    const dispatch = useDispatch()
-    const onIncrease = e => {
-        e.preventDefault()
-        alert('+')
-        dispatch(increase())
-    }
-    const onDecrease = e => {
-        e.preventDefault()
-        alert('-')
-        dispatch(decrease())
-    }
-    
+const CounterPage = ({number, increaseAsync, decreaseAsync}) => {
     return (
-        <Counter number={number} onIncrease={onIncrease} onDecrease={onDecrease}/>
+        <Counter number={number} onIncrease={increaseAsync} onDecrease={decreaseAsync}/>
     );
 };
-
-/**
-const mapStateToProps = state => ({number: state.counter});
-const counterActions = {
-    increase,
-    decrease
+const mapStateToProps = state => ({number: state.counter})
+const registerActions = {
+  increaseAsync, decreaseAsync
 }
-export default connect(mapStateToProps, counterActions)(CounterPage);
- */
-export default CounterPage
+
+export default connect( mapStateToProps, registerActions)(CounterPage);
+
+
+// export default connect(
+//     state => ({number: state.counter}),
+//     {increaseAsync, decreaseAsync}
+// )(CounterPage);
